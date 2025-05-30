@@ -113,44 +113,88 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Carousel */}
-      <section className="relative w-full h-screen">
-        <Carousel className="w-full h-full">
-          <CarouselContent className="h-full">
-            {popularProducts.map((product) => (
-              <CarouselItem key={product.id} className="h-full">
-                <div className="relative w-full h-full">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                    <div className="text-center text-white max-w-2xl px-4">
-                      <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                        {product.name}
-                      </h1>
-                      <p className="text-xl md:text-2xl mb-8 opacity-90">
-                        {product.description}
-                      </p>
-                      <div className="text-3xl md:text-4xl font-bold mb-8">
-                        {product.price} ₽
-                      </div>
-                      <Button
-                        size="lg"
-                        className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 text-xl"
-                      >
-                        Заказать сейчас
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
-          <CarouselNext className="right-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
-        </Carousel>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-pink-50 to-green-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Свежие цветы для
+                <span className="text-pink-500"> особых</span> моментов
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Создаем незабываемые букеты и композиции для ваших самых важных
+                событий. Доставка по всему городу в течение 2 часов.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3"
+                >
+                  <Icon name="ShoppingCart" size={20} className="mr-2" />
+                  Заказать букет
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 py-3">
+                  <Icon name="Phone" size={20} className="mr-2" />
+                  Связаться с нами
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              {/* Carousel with flower images */}
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-lg mx-auto"
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop"
+                      alt="Букет роз"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=600&h=600&fit=crop"
+                      alt="Розовые тюльпаны"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&h=600&fit=crop"
+                      alt="Весенние цветы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&h=600&fit=crop"
+                      alt="Белые розы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=600&fit=crop"
+                      alt="Яркие герберы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
+              <div className="absolute -top-4 -right-4 bg-pink-500 text-white p-4 rounded-full shadow-lg">
+                <Icon name="Heart" size={24} />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Popular Products */}
