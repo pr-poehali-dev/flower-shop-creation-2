@@ -6,6 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
@@ -134,11 +141,54 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop"
-                alt="Красивый букет цветов"
-                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
-              />
+              {/* Carousel with flower images */}
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-lg mx-auto"
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop"
+                      alt="Букет роз"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=600&h=600&fit=crop"
+                      alt="Розовые тюльпаны"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&h=600&fit=crop"
+                      alt="Весенние цветы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&h=600&fit=crop"
+                      alt="Белые розы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img
+                      src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=600&fit=crop"
+                      alt="Яркие герберы"
+                      className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
               <div className="absolute -top-4 -right-4 bg-pink-500 text-white p-4 rounded-full shadow-lg">
                 <Icon name="Heart" size={24} />
               </div>
